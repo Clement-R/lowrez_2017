@@ -1,0 +1,29 @@
+Ecrans :
+
+- Salle service (réception client)
+	o Voir les clients, pouvoir prendre une commande
+-
+
+
+
+
+Theme :
+	GATEAUUUUUUUUUUUUUX
+
+	Layer cake
+		- Vanille
+		- Chocolat
+
+		- Colorant
+
+Choix du goût de la pâte, de la couleur
+Plusieurs étages = plusieurs génoise à faire cuire
+
+Choix filling, mais le même dans tout le gâteau
+Choix nappage (frosting)
+Choix décoration, jusqu'à X ingrédients ?
+	- Fruits
+	- Crême (poche à douille)
+	-
+
+Pas de % de réussite, notation à la Cook Serve Delicious : Parfait, Moyen, Raté
