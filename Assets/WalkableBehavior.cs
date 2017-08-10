@@ -5,21 +5,42 @@ using UnityEngine;
 public class WalkableBehavior : MonoBehaviour {
 
     public Transform targetPosition;
+    public Transform exitPosition;
 
-	void Start () {
-        StartCoroutine(WalkTo(targetPosition.position));
-	}
+    public float timeBetweenStep = 0.1f;
 
     IEnumerator WalkTo(Vector2 target) {
-        while(transform.position.y != targetPosition.position.y) {
+        GetComponent<Animator>().SetBool("isWalking", true);
+
+        // Reach target Y position
+        while (transform.position.y != target.y) {
             transform.Translate(0, 1, 0);
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(timeBetweenStep);
+        }
+
+        // Reach target X position
+        while (transform.position.x != target.x) {
+            if(transform.position.x > target.x) {
+                transform.Translate(-1, 0, 0);
+            } else if (transform.position.x < target.x) {
+                transform.Translate(1, 0, 0);
+            }
+
+            yield return new WaitForSeconds(timeBetweenStep);
         }
 
         OnTravelEnd();
     }
 
-    void OnTravelEnd() {
+    public void GoToCounter() {
+        StartCoroutine(WalkTo(targetPosition.position));
+    }
 
+    public void GoToExit() {
+        StartCoroutine(WalkTo(exitPosition.position));
+    }
+
+    void OnTravelEnd() {
+        GetComponent<Animator>().SetBool("isWalking", false);
     }
 }
