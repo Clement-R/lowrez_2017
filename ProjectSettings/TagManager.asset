@@ -47,3 +47,9 @@ TagManager:
   - name: Customers
     uniqueID: 897544013
     locked: 0
+  - name: Cards
+    uniqueID: 1327749319
+    locked: 0
+  - name: Mouse
+    uniqueID: 910652475
+    locked: 0

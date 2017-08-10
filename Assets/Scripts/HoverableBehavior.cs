@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class HoverableBehavior : MonoBehaviour {
-    // Update is called once per frame
-    void OnMouseEnter() {
+
+    private void OnMouseEnter() {
         GetComponent<SpriteOutline>().outlineSize = 1;
     }
 
