@@ -48,4 +48,8 @@ public class MinimapHoverBehavior : MonoBehaviour {
     public void OnMouseEnter() {
         _image.color = new Color(_color.r, _color.g, _color.b, 1);
     }
+
+    public void OnDisable() {
+        _image.color = _color;
+    }
 }
