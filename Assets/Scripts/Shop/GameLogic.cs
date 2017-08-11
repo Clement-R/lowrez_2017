@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class GameLogic : MonoBehaviour {
 
-    private Stack<Order> _orders = new Stack<Order>();
+    public Transform[] shopEntries = new Transform[3];
+    public Transform[] shopExits;
+    public GameObject[] customers;
+
+    private Queue<Order> _orders = new Queue<Order>();
     private Order _nextOrder = null;
 
 	void Start () {
@@ -14,26 +18,22 @@ public class GameLogic : MonoBehaviour {
 
         // Stack customers and send them when a position is available
         foreach (var order in level.orders) {
-            _orders.Push(order);
+            _orders.Enqueue(order);
         }
-
-        Debug.Log(LaneManager.instance.GetPositionInLane(LaneManager.instance.positions[0]));
-        Debug.Log(LaneManager.instance.GetPositionInLane(LaneManager.instance.positions[3]));
-        Debug.Log(LaneManager.instance.GetPositionInLane(LaneManager.instance.positions[6]));
-        // StartCoroutine("SendCustomers");
+        
+        StartCoroutine("SendCustomers");
     }
 
     IEnumerator SendCustomers() {
         while(true) {
-
+            
             // If we doesn't have a waiting order we pick the next one
             if(_nextOrder == null && _orders.Count > 0) {
-               _nextOrder = _orders.Pop();
+               _nextOrder = _orders.Dequeue();
             }
 
             // Send the customer if it's time of arrival came
-            if(Time.time >= _nextOrder.time) {
-
+            if(_nextOrder != null && Time.time >= (float) _nextOrder.time / 1000) {
                 // Search a position for the customer, if none is found then we wait
                 Transform position = LaneManager.instance.GetAvailablePosition();
                 while(position == null) {
@@ -41,9 +41,24 @@ public class GameLogic : MonoBehaviour {
                     yield return null;
                 }
 
-                // Launch it !
+                // Get enter position
+                int lane = LaneManager.instance.GetLaneNumber(position);
+
+                // TODO : instantiate customer given the customerId of the order
+                // Instantiate customer and set its spawn position to right shop entry
+                GameObject newCustomer = Instantiate(customers[0], shopEntries[lane].position, Quaternion.identity);
+
                 // set WalkableBehavior : TargetPosition, ExitPosition
+                WalkableBehavior pathfinder = newCustomer.GetComponent<WalkableBehavior>();
+                pathfinder.targetPosition = position;
+                // TODO : random on exit
+                pathfinder.exitPosition = shopExits[0];
+
                 // set SpriteRenderer : OrderInLayer
+                newCustomer.GetComponent<SpriteRenderer>().sortingOrder = LaneManager.instance.GetPositionInLane(position);
+
+                // Launch it !
+                pathfinder.GoToCounter();
 
                 _nextOrder = null;
             }

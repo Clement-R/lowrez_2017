@@ -9,7 +9,42 @@
     	{
     		"customerId": 2,
     		"cakeId": 2,
+    		"time": 3000
+    	},
+		{
+    		"customerId": 1,
+    		"cakeId": 1,
+    		"time": 4500
+    	},
+    	{
+    		"customerId": 2,
+    		"cakeId": 2,
+    		"time": 6000
+    	},
+		{
+    		"customerId": 1,
+    		"cakeId": 1,
+    		"time": 7500
+    	},
+    	{
+    		"customerId": 2,
+    		"cakeId": 2,
+    		"time": 9000
+    	},
+		{
+    		"customerId": 1,
+    		"cakeId": 1,
     		"time": 10500
+    	},
+    	{
+    		"customerId": 2,
+    		"cakeId": 2,
+    		"time": 12000
+    	},
+    	{
+    		"customerId": 2,
+    		"cakeId": 2,
+    		"time": 13500
     	}
     ]
 }

@@ -1760,6 +1760,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 212650424429668484, guid: abdfbec59da75034db864fef1351c115,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: abdfbec59da75034db864fef1351c115, type: 2}
   m_IsPrefabParent: 0
@@ -2314,6 +2319,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9730bc039b22f6448a292145ea00bde8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shopEntries:
+  - {fileID: 1423017437}
+  - {fileID: 1027700274}
+  - {fileID: 2136688440}
+  shopExits:
+  - {fileID: 1974827428}
+  - {fileID: 1641144392}
+  customers:
+  - {fileID: 1326552213322432, guid: abdfbec59da75034db864fef1351c115, type: 2}
 --- !u!1 &797338317
 GameObject:
   m_ObjectHideFlags: 0

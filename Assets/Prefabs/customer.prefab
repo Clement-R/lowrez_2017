@@ -144,7 +144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPosition: {fileID: 0}
   exitPosition: {fileID: 0}
-  timeBetweenStep: 0.1
+  timeBetweenStep: 0.05
 --- !u!212 &212605977161901004
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -31,7 +31,7 @@ public class LaneManager : MonoBehaviour {
 
         // Search for an available position
         for (int i = 0; i < _positionsState.Length; i++) {
-            if (_positionsState[i] == false) {
+            if (_positionsState[i] == true) {
                 id = i;
                 break;
             }
@@ -40,16 +40,34 @@ public class LaneManager : MonoBehaviour {
         // Return position or null
         if (id != -1) {
             availablePosition = positions[id];
-            _positionsState[id] = true;
+            _positionsState[id] = false;
         }
         return availablePosition;
+    }
+
+    public void FreePosition(Transform position) {
+        for (int i = 0; i < positions.Length; i++) {
+            if (positions[i] == position) {
+                _positionsState[i] = true;
+            }
+        }
+    }
+
+    public int GetLaneNumber(Transform position) {
+        for (int i = 0; i < positions.Length; i++) {
+            if (positions[i] == position) {
+                return (i / 3);
+            }
+        }
+
+        return -1;
     }
 
     public int GetPositionInLane(Transform position) {
 
         for (int i = 0; i < positions.Length; i++) {
             if(positions[i] == position) {
-                return (i / 3);
+                return ((i % 3) + 1);
             }
         }
 
