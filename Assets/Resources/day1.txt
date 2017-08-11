@@ -1,0 +1,15 @@
+{
+    "day": 1,
+    "orders" : [
+    	{
+    		"customerId": 1,
+    		"cakeId": 1,
+    		"time": 1500
+    	},
+    	{
+    		"customerId": 2,
+    		"cakeId": 2,
+    		"time": 10500
+    	}
+    ]
+}
