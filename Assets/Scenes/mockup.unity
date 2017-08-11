@@ -864,6 +864,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e9f5afac6ad6d8498c4667ec03548eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  location: 1
 --- !u!61 &202432314
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1230,6 +1231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e9f5afac6ad6d8498c4667ec03548eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  location: 2
 --- !u!61 &346567504
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1876,6 +1878,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e9f5afac6ad6d8498c4667ec03548eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  location: 3
 --- !u!61 &643825811
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3575,6 +3578,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e9f5afac6ad6d8498c4667ec03548eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  location: 0
 --- !u!61 &2106685289
 BoxCollider2D:
   m_ObjectHideFlags: 0

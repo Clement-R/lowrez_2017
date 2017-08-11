@@ -5,12 +5,40 @@ using UnityEngine.UI;
 
 public class MinimapHoverBehavior : MonoBehaviour {
 
+    public enum Location {
+        Shop,
+        Cooking,
+        Filling,
+        Topping
+    }
+
+    public Location location;
+
     private RawImage _image;
     private Color _color;
+    private SceneSelector _sceneManager;
 
     private void Awake() {
         _image = GetComponent<RawImage>();
         _color = _image.color;
+        _sceneManager = Camera.main.GetComponent<SceneSelector>();
+    }
+
+    public void OnMouseDown() {
+        switch(location) {
+            case Location.Shop:
+                _sceneManager.GoToShop();
+                break;
+            case Location.Cooking:
+                _sceneManager.GoToCook();
+                break;
+            case Location.Filling:
+                _sceneManager.GoToFilling();
+                break;
+            case Location.Topping:
+                _sceneManager.GoToTopping();
+                break;
+        }
     }
 
     public void OnMouseExit() {
