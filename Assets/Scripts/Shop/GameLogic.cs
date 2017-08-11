@@ -36,7 +36,7 @@ public class GameLogic : MonoBehaviour {
 
                 // Search a position for the customer, if none is found then we wait
                 Transform position = LaneManager.instance.GetAvailablePosition();
-                while(position != null) {
+                while(position == null) {
                     position = LaneManager.instance.GetAvailablePosition();
                     yield return null;
                 }
