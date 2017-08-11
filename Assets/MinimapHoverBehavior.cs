@@ -14,12 +14,12 @@ public class MinimapHoverBehavior : MonoBehaviour {
 
     public Location location;
 
-    private RawImage _image;
+    private Image _image;
     private Color _color;
     private SceneSelector _sceneManager;
 
     private void Awake() {
-        _image = GetComponent<RawImage>();
+        _image = GetComponent<Image>();
         _color = _image.color;
         _sceneManager = Camera.main.GetComponent<SceneSelector>();
     }
