@@ -14,12 +14,10 @@ public class MinimapHoverBehavior : MonoBehaviour {
     }
 
     public void OnMouseExit() {
-        Debug.Log("Exit");
         _image.color = _color;
     }
 
     public void OnMouseEnter() {
-        Debug.Log("Enter");
         _image.color = new Color(_color.r, _color.g, _color.b, 1);
     }
 }

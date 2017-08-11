@@ -14,6 +14,7 @@ public class InputManager : MonoBehaviour {
 	void Update () {
         // Minimap
 		if(Input.GetKey(KeyCode.A)) {
+            GameObject.Find("Canvas").GetComponent<RectTransform>().position = new Vector2(Camera.main.transform.position.x, Camera.main.transform.position.y);
             _map.SetActive(true);
         } else {
             _map.SetActive(false);
