@@ -12,6 +12,7 @@ public class GameLogic : MonoBehaviour {
     private Order _nextOrder = null;
 
 	void Start () {
+        // TODO : Get day ID
         // Get day (level) data
         TextAsset json = Resources.Load("day1") as TextAsset;
         Day level = JsonUtility.FromJson<Day>(json.text);

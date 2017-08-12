@@ -45,6 +45,11 @@
     		"customerId": 2,
     		"cakeId": 2,
     		"time": 13500
+    	},
+		{
+    		"customerId": 2,
+    		"cakeId": 2,
+    		"time": 14500
     	}
     ]
 }

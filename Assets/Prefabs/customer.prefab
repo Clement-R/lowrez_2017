@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4273614491926474}
   - component: {fileID: 212650424429668484}
   - component: {fileID: 114830177613529456}
+  - component: {fileID: 114884145459794336}
   - component: {fileID: 114109651834343298}
   - component: {fileID: 114663041956139798}
   - component: {fileID: 95276341521072014}
@@ -145,6 +146,18 @@ MonoBehaviour:
   targetPosition: {fileID: 0}
   exitPosition: {fileID: 0}
   timeBetweenStep: 0.05
+--- !u!114 &114884145459794336
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1326552213322432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ac7cf1f93a6dc94fbf14de6479e9596, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waitingTime: 10
 --- !u!212 &212605977161901004
 SpriteRenderer:
   m_ObjectHideFlags: 1
